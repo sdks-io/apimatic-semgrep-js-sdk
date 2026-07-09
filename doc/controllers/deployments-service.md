@@ -11,14 +11,14 @@ const deploymentsServiceApi = new DeploymentsServiceApi(client);
 `DeploymentsServiceApi`
 
 
-# Deployments Service List Deployments
+# List Deployments
 
 Request the deployments your auth can access.
 
 Currently available auth scope does not extend over more than one deployment. This endpoint returns the single deployment your token can access. The endpoint additionally returns links to related resources available on this API.
 
 ```ts
-async deploymentsServiceListDeployments(
+async listDeployments(
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ProtosOpenapiV1ListDeploymentsResponse>>
 ```
@@ -43,7 +43,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 
 ```ts
 try {
-  const response = await deploymentsServiceApi.deploymentsServiceListDeployments();
+  const response = await deploymentsServiceApi.listDeployments();
 
   // Extracting fully parsed response body.
   console.log(response.result);

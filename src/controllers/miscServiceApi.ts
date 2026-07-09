@@ -30,7 +30,7 @@ export class MiscServiceApi extends BaseApi {
    *
    * @return Response from the API call
    */
-  async miscServiceGetBootstrapSmsVpc(
+  async getBootstrapSmsVpc(
     requestOptions?: RequestOptions
   ): Promise<ApiResponse<ProtosOpenapiV1GetBootstrapSmsVpcResponse>> {
     const req = this.createRequest('GET', '/api/v1/bootstrap-sms-vpc');
@@ -46,7 +46,7 @@ export class MiscServiceApi extends BaseApi {
    *
    * @return Response from the API call
    */
-  async miscServicePing(
+  async ping(
     requestOptions?: RequestOptions
   ): Promise<ApiResponse<unknown | undefined>> {
     const req = this.createRequest('GET', '/api/v1/ping');

@@ -30,7 +30,7 @@ export class SecretsServiceApi extends BaseApi {
    * @param repo
    * @return Response from the API call
    */
-  async secretsServiceListSecretsPath(
+  async listSecretsPath(
     deploymentId: string,
     cursor?: string,
     limit?: bigint,

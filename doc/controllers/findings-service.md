@@ -11,12 +11,12 @@ const findingsServiceApi = new FindingsServiceApi(client);
 `FindingsServiceApi`
 
 
-# Findings Service List Findings
+# List Findings
 
 Request the list of code, supply chain, or AI-powered scan findings in an organization, paginated in pages of 100 entries and limited by the `since` timestamp. Findings are returned by `relevant_since` descending (see `since` in the Query Parameters list). Examples: List SAST findings with pagination, List SCA findings since timestamp, List AI-powered scan findings, List findings with filters.
 
 ```ts
-async findingsServiceListFindings(
+async listFindings(
   deploymentSlug: string,
   issueType?: IssueType2,
   since?: number,
@@ -140,7 +140,7 @@ const componentTags: string[] = [
 const isMalicious = true;
 
 try {
-  const response = await findingsServiceApi.findingsServiceListFindings(
+  const response = await findingsServiceApi.listFindings(
     deploymentSlug,
     issueType,
     since,

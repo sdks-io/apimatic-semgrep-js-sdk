@@ -29,7 +29,7 @@ export class PoliciesServiceApi extends BaseApi {
    * @param deploymentId
    * @return Response from the API call
    */
-  async policiesServiceListPolicies(
+  async listPolicies(
     deploymentId: string,
     requestOptions?: RequestOptions
   ): Promise<ApiResponse<ProtosOpenapiV1ListPoliciesResponse>> {
@@ -50,7 +50,7 @@ export class PoliciesServiceApi extends BaseApi {
    * @param limit
    * @return Response from the API call
    */
-  async policiesServiceListPolicyRules(
+  async listPolicyRules(
     deploymentId: string,
     policyId: string,
     cursor?: string,
@@ -80,7 +80,7 @@ export class PoliciesServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async policiesServiceUpdatePolicy(
+  async updatePolicy(
     deploymentId: string,
     policyId: string,
     body: UpdatePolicyRequest,

@@ -11,10 +11,10 @@ const secretsServiceApi = new SecretsServiceApi(client);
 `SecretsServiceApi`
 
 
-# Secrets Service List Secrets Path
+# List Secrets Path
 
 ```ts
-async secretsServiceListSecretsPath(
+async listSecretsPath(
   deploymentId: string,
   cursor?: string,
   limit?: bigint,
@@ -59,7 +59,7 @@ const deploymentId = '123';
 const status = Status8.FindingStatusUnspecified;
 
 try {
-  const response = await secretsServiceApi.secretsServiceListSecretsPath(
+  const response = await secretsServiceApi.listSecretsPath(
     deploymentId,
     undefined,
     undefined,

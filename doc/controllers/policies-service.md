@@ -12,15 +12,15 @@ const policiesServiceApi = new PoliciesServiceApi(client);
 
 ## Methods
 
-* [Policies Service List Policies](../../doc/controllers/policies-service.md#policies-service-list-policies)
-* [Policies Service List Policy Rules](../../doc/controllers/policies-service.md#policies-service-list-policy-rules)
-* [Policies Service Update Policy](../../doc/controllers/policies-service.md#policies-service-update-policy)
+* [List Policies](../../doc/controllers/policies-service.md#list-policies)
+* [List Policy Rules](../../doc/controllers/policies-service.md#list-policy-rules)
+* [Update Policy](../../doc/controllers/policies-service.md#update-policy)
 
 
-# Policies Service List Policies
+# List Policies
 
 ```ts
-async policiesServiceListPolicies(
+async listPolicies(
   deploymentId: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ProtosOpenapiV1ListPoliciesResponse>>
@@ -49,7 +49,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const deploymentId = '123';
 
 try {
-  const response = await policiesServiceApi.policiesServiceListPolicies(deploymentId);
+  const response = await policiesServiceApi.listPolicies(deploymentId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -73,10 +73,10 @@ try {
 ```
 
 
-# Policies Service List Policy Rules
+# List Policy Rules
 
 ```ts
-async policiesServiceListPolicyRules(
+async listPolicyRules(
   deploymentId: string,
   policyId: string,
   cursor?: string,
@@ -113,7 +113,7 @@ const deploymentId = '123';
 const policyId = '456';
 
 try {
-  const response = await policiesServiceApi.policiesServiceListPolicyRules(
+  const response = await policiesServiceApi.listPolicyRules(
     deploymentId,
     policyId
   );
@@ -140,10 +140,10 @@ try {
 ```
 
 
-# Policies Service Update Policy
+# Update Policy
 
 ```ts
-async policiesServiceUpdatePolicy(
+async updatePolicy(
   deploymentId: string,
   policyId: string,
   body: UpdatePolicyRequest,
@@ -185,7 +185,7 @@ const body: UpdatePolicyRequest = {
 };
 
 try {
-  const response = await policiesServiceApi.policiesServiceUpdatePolicy(
+  const response = await policiesServiceApi.updatePolicy(
     deploymentId,
     policyId,
     body

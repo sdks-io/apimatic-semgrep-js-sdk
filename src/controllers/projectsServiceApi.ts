@@ -58,7 +58,7 @@ export class ProjectsServiceApi extends BaseApi {
    * @param pageSize       Example: 100
    * @return Response from the API call
    */
-  async projectsServiceListProjects(
+  async listProjects(
     deploymentSlug: string,
     page?: bigint,
     pageSize?: bigint,
@@ -85,7 +85,7 @@ export class ProjectsServiceApi extends BaseApi {
    * @param projectName
    * @return Response from the API call
    */
-  async projectsServiceDeleteProject(
+  async deleteProject(
     deploymentSlug: string,
     projectName: string,
     requestOptions?: RequestOptions
@@ -107,7 +107,7 @@ export class ProjectsServiceApi extends BaseApi {
    * @param projectName
    * @return Response from the API call
    */
-  async projectsServiceGetProject(
+  async getProject(
     deploymentSlug: string,
     projectName: string,
     requestOptions?: RequestOptions
@@ -132,7 +132,7 @@ export class ProjectsServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async projectsServiceUpdateProject(
+  async updateProject(
     deploymentSlug: string,
     projectName: string,
     body: UpdateProjectRequest,
@@ -161,7 +161,7 @@ export class ProjectsServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async projectsServiceToggleProjectManagedScan(
+  async toggleProjectManagedScan(
     deploymentSlug: string,
     projectName: string,
     body: ToggleProjectManagedScanRequest,
@@ -195,7 +195,7 @@ export class ProjectsServiceApi extends BaseApi {
    * @param tags
    * @return Response from the API call
    */
-  async projectsServiceDeleteProjectTags(
+  async deleteProjectTags(
     deploymentSlug: string,
     projectName: string,
     tags?: string[],
@@ -224,7 +224,7 @@ export class ProjectsServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async projectsServiceAddProjectTags(
+  async addProjectTags(
     deploymentSlug: string,
     projectName: string,
     body: AddProjectTagsRequest,

@@ -29,7 +29,7 @@ export class ScansServiceApi extends BaseApi {
    * @param scanId
    * @return Response from the API call
    */
-  async scansServiceGetScan(
+  async getScan(
     deploymentId: string,
     scanId: string,
     requestOptions?: RequestOptions
@@ -51,7 +51,7 @@ export class ScansServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async scansServiceSearchScans(
+  async searchScans(
     deploymentId: string,
     body: SearchScansRequest,
     requestOptions?: RequestOptions

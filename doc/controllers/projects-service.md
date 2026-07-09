@@ -10,21 +10,21 @@ const projectsServiceApi = new ProjectsServiceApi(client);
 
 ## Methods
 
-* [Projects Service List Projects](../../doc/controllers/projects-service.md#projects-service-list-projects)
-* [Projects Service Delete Project](../../doc/controllers/projects-service.md#projects-service-delete-project)
-* [Projects Service Get Project](../../doc/controllers/projects-service.md#projects-service-get-project)
-* [Projects Service Update Project](../../doc/controllers/projects-service.md#projects-service-update-project)
-* [Projects Service Toggle Project Managed Scan](../../doc/controllers/projects-service.md#projects-service-toggle-project-managed-scan)
-* [Projects Service Delete Project Tags](../../doc/controllers/projects-service.md#projects-service-delete-project-tags)
-* [Projects Service Add Project Tags](../../doc/controllers/projects-service.md#projects-service-add-project-tags)
+* [List Projects](../../doc/controllers/projects-service.md#list-projects)
+* [Delete Project](../../doc/controllers/projects-service.md#delete-project)
+* [Get Project](../../doc/controllers/projects-service.md#get-project)
+* [Update Project](../../doc/controllers/projects-service.md#update-project)
+* [Toggle Project Managed Scan](../../doc/controllers/projects-service.md#toggle-project-managed-scan)
+* [Delete Project Tags](../../doc/controllers/projects-service.md#delete-project-tags)
+* [Add Project Tags](../../doc/controllers/projects-service.md#add-project-tags)
 
 
-# Projects Service List Projects
+# List Projects
 
 Request the list of projects that have been scanned or onboarded to Managed Scans. Does not return archived repositories. Returns 100 projects per page by default.
 
 ```ts
-async projectsServiceListProjects(
+async listProjects(
   deploymentSlug: string,
   page?: bigint,
   pageSize?: bigint,
@@ -61,7 +61,7 @@ const page = BigInt(1);
 const pageSize = BigInt(100);
 
 try {
-  const response = await projectsServiceApi.projectsServiceListProjects(
+  const response = await projectsServiceApi.listProjects(
     deploymentSlug,
     page,
     pageSize
@@ -89,12 +89,12 @@ try {
 ```
 
 
-# Projects Service Delete Project
+# Delete Project
 
 Delete a project for a deployment you have access to. This will also delete all of the associated findings.
 
 ```ts
-async projectsServiceDeleteProject(
+async deleteProject(
   deploymentSlug: string,
   projectName: string,
   requestOptions?: RequestOptions
@@ -127,7 +127,7 @@ const deploymentSlug = 'your-deployment';
 const projectName = 'organization/project';
 
 try {
-  const response = await projectsServiceApi.projectsServiceDeleteProject(
+  const response = await projectsServiceApi.deleteProject(
     deploymentSlug,
     projectName
   );
@@ -154,12 +154,12 @@ try {
 ```
 
 
-# Projects Service Get Project
+# Get Project
 
 Retrieve details for a single project associated with a deployment that you have access to.
 
 ```ts
-async projectsServiceGetProject(
+async getProject(
   deploymentSlug: string,
   projectName: string,
   requestOptions?: RequestOptions
@@ -192,7 +192,7 @@ const deploymentSlug = 'your-deployment';
 const projectName = 'organization/project';
 
 try {
-  const response = await projectsServiceApi.projectsServiceGetProject(
+  const response = await projectsServiceApi.getProject(
     deploymentSlug,
     projectName
   );
@@ -219,14 +219,14 @@ try {
 ```
 
 
-# Projects Service Update Project
+# Update Project
 
 Update attributes for the project using the value passed in to the request body.
 
 Note: The only attribute that is supported as of January 2023 is `tags`.
 
 ```ts
-async projectsServiceUpdateProject(
+async updateProject(
   deploymentSlug: string,
   projectName: string,
   body: UpdateProjectRequest,
@@ -270,7 +270,7 @@ const body: UpdateProjectRequest = {
 };
 
 try {
-  const response = await projectsServiceApi.projectsServiceUpdateProject(
+  const response = await projectsServiceApi.updateProject(
     deploymentSlug,
     projectName,
     body
@@ -298,14 +298,14 @@ try {
 ```
 
 
-# Projects Service Toggle Project Managed Scan
+# Toggle Project Managed Scan
 
 Enable or disable
 [Semgrep Managed Scans](/docs/deployment/managed-scanning/overview)
 for a project.
 
 ```ts
-async projectsServiceToggleProjectManagedScan(
+async toggleProjectManagedScan(
   deploymentSlug: string,
   projectName: string,
   body: ToggleProjectManagedScanRequest,
@@ -345,7 +345,7 @@ const body: ToggleProjectManagedScanRequest = {
 };
 
 try {
-  const response = await projectsServiceApi.projectsServiceToggleProjectManagedScan(
+  const response = await projectsServiceApi.toggleProjectManagedScan(
     deploymentSlug,
     projectName,
     body
@@ -373,7 +373,7 @@ try {
 ```
 
 
-# Projects Service Delete Project Tags
+# Delete Project Tags
 
 Remove tags from a project for a deployment you have access to.
 
@@ -382,7 +382,7 @@ them from the requested project. Any other projects associated with the requeste
 tag will remain unaffected.
 
 ```ts
-async projectsServiceDeleteProjectTags(
+async deleteProjectTags(
   deploymentSlug: string,
   projectName: string,
   tags?: string[],
@@ -421,7 +421,7 @@ const tags: string[] = [
 ];
 
 try {
-  const response = await projectsServiceApi.projectsServiceDeleteProjectTags(
+  const response = await projectsServiceApi.deleteProjectTags(
     deploymentSlug,
     projectName,
     tags
@@ -449,14 +449,14 @@ try {
 ```
 
 
-# Projects Service Add Project Tags
+# Add Project Tags
 
 Add tags to a project for a deployment you have access to.
 
 Any project tags that do not already exist for the deployment will be created automatically and associated with the project.
 
 ```ts
-async projectsServiceAddProjectTags(
+async addProjectTags(
   deploymentSlug: string,
   projectName: string,
   body: AddProjectTagsRequest,
@@ -499,7 +499,7 @@ const body: AddProjectTagsRequest = {
 };
 
 try {
-  const response = await projectsServiceApi.projectsServiceAddProjectTags(
+  const response = await projectsServiceApi.addProjectTags(
     deploymentSlug,
     projectName,
     body

@@ -44,7 +44,7 @@ export class TicketingServiceApi extends BaseApi {
    * @param externalTicketId
    * @return Response from the API call
    */
-  async ticketingServiceDeleteTicket(
+  async deleteTicket(
     deploymentId: string,
     externalTicketId: bigint,
     requestOptions?: RequestOptions
@@ -72,7 +72,7 @@ export class TicketingServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async ticketingServiceLinkTicket(
+  async linkTicket(
     deploymentId: string,
     body: LinkTicketRequest,
     requestOptions?: RequestOptions
@@ -100,7 +100,7 @@ export class TicketingServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async ticketingServiceUnlinkTicket(
+  async unlinkTicket(
     deploymentId: string,
     body: UnlinkTicketRequest,
     requestOptions?: RequestOptions
@@ -139,7 +139,7 @@ export class TicketingServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async ticketingServiceCreateTicket(
+  async createTicket(
     deploymentSlug: string,
     body: CreateTicketRequest,
     requestOptions?: RequestOptions

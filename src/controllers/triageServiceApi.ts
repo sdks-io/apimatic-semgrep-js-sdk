@@ -28,7 +28,7 @@ export class TriageServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async triageServiceBulkTriage(
+  async bulkTriage(
     deploymentSlug: string,
     body: BulkTriageRequest,
     requestOptions?: RequestOptions

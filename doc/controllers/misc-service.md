@@ -12,11 +12,11 @@ const miscServiceApi = new MiscServiceApi(client);
 
 ## Methods
 
-* [Misc Service Get Bootstrap Sms Vpc](../../doc/controllers/misc-service.md#misc-service-get-bootstrap-sms-vpc)
-* [Misc Service Ping](../../doc/controllers/misc-service.md#misc-service-ping)
+* [Get Bootstrap Sms Vpc](../../doc/controllers/misc-service.md#get-bootstrap-sms-vpc)
+* [Ping](../../doc/controllers/misc-service.md#ping)
 
 
-# Misc Service Get Bootstrap Sms Vpc
+# Get Bootstrap Sms Vpc
 
 VPC support for Managed Scans is in private beta.
 
@@ -30,7 +30,7 @@ See the original AWS cloudformation template format at https://docs.aws.amazon.c
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async miscServiceGetBootstrapSmsVpc(
+async getBootstrapSmsVpc(
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ProtosOpenapiV1GetBootstrapSmsVpcResponse>>
 ```
@@ -51,7 +51,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 
 ```ts
 try {
-  const response = await miscServiceApi.miscServiceGetBootstrapSmsVpc();
+  const response = await miscServiceApi.getBootstrapSmsVpc();
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -75,14 +75,14 @@ try {
 ```
 
 
-# Misc Service Ping
+# Ping
 
 Use to ping the server and assert liveness.
 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async miscServicePing(
+async ping(
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<unknown | undefined>>
 ```
@@ -103,7 +103,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 
 ```ts
 try {
-  const response = await miscServiceApi.miscServicePing();
+  const response = await miscServiceApi.ping();
 
   // Extracting fully parsed response body.
   console.log(response.result);

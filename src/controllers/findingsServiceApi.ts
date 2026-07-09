@@ -64,7 +64,7 @@ export class FindingsServiceApi extends BaseApi {
    * @param clickToFixPrState
    * @return Response from the API call
    */
-  async findingsServiceListFindings(
+  async listFindings(
     deploymentSlug: string,
     issueType?: IssueType2,
     since?: number,

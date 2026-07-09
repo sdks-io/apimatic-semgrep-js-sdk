@@ -21,7 +21,7 @@ export class DeploymentsServiceApi extends BaseApi {
    *
    * @return Response from the API call
    */
-  async deploymentsServiceListDeployments(
+  async listDeployments(
     requestOptions?: RequestOptions
   ): Promise<ApiResponse<ProtosOpenapiV1ListDeploymentsResponse>> {
     const req = this.createRequest('GET', '/api/v1/deployments');

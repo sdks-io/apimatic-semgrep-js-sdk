@@ -12,16 +12,16 @@ const scansServiceApi = new ScansServiceApi(client);
 
 ## Methods
 
-* [Scans Service Get Scan](../../doc/controllers/scans-service.md#scans-service-get-scan)
-* [Scans Service Search Scans](../../doc/controllers/scans-service.md#scans-service-search-scans)
+* [Get Scan](../../doc/controllers/scans-service.md#get-scan)
+* [Search Scans](../../doc/controllers/scans-service.md#search-scans)
 
 
-# Scans Service Get Scan
+# Get Scan
 
 Request the details of a scan including the associated deployment, repository, and commit information.
 
 ```ts
-async scansServiceGetScan(
+async getScan(
   deploymentId: string,
   scanId: string,
   requestOptions?: RequestOptions
@@ -54,7 +54,7 @@ const deploymentId = '123';
 const scanId = '456';
 
 try {
-  const response = await scansServiceApi.scansServiceGetScan(
+  const response = await scansServiceApi.getScan(
     deploymentId,
     scanId
   );
@@ -81,12 +81,12 @@ try {
 ```
 
 
-# Scans Service Search Scans
+# Search Scans
 
 List the scans associated with a particular repository over the past 30 days.
 
 ```ts
-async scansServiceSearchScans(
+async searchScans(
   deploymentId: string,
   body: SearchScansRequest,
   requestOptions?: RequestOptions
@@ -121,7 +121,7 @@ const body: SearchScansRequest = {
 };
 
 try {
-  const response = await scansServiceApi.scansServiceSearchScans(
+  const response = await scansServiceApi.searchScans(
     deploymentId,
     body
   );

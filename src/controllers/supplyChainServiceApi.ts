@@ -50,7 +50,7 @@ export class SupplyChainServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async supplyChainServiceListDependencies(
+  async listDependencies(
     deploymentId: string,
     body: ListDependenciesRequest,
     requestOptions?: RequestOptions
@@ -72,7 +72,7 @@ export class SupplyChainServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async supplyChainServiceListRepositoriesForDependencies(
+  async listRepositoriesForDependencies(
     deploymentId: string,
     body: ListRepositoriesForDependenciesRequest,
     requestOptions?: RequestOptions
@@ -98,7 +98,7 @@ export class SupplyChainServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async supplyChainServiceListLockfilesForDependencies(
+  async listLockfilesForDependencies(
     deploymentId: string,
     repositoryId: string,
     body: ListLockfilesForDependenciesRequest,
@@ -125,7 +125,7 @@ export class SupplyChainServiceApi extends BaseApi {
    * @param body
    * @return Response from the API call
    */
-  async supplyChainServiceCreateSbomExport(
+  async createSbomExport(
     deploymentId: string,
     body: CreateSbomExportRequest,
     requestOptions?: RequestOptions
@@ -147,7 +147,7 @@ export class SupplyChainServiceApi extends BaseApi {
    * @param taskToken
    * @return Response from the API call
    */
-  async supplyChainServiceGetSbomExport(
+  async getSbomExport(
     deploymentId: string,
     taskToken: string,
     requestOptions?: RequestOptions

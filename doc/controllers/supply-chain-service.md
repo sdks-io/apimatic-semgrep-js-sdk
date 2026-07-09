@@ -14,17 +14,17 @@ const supplyChainServiceApi = new SupplyChainServiceApi(client);
 
 ## Methods
 
-* [Supply Chain Service List Dependencies](../../doc/controllers/supply-chain-service.md#supply-chain-service-list-dependencies)
-* [Supply Chain Service List Repositories for Dependencies](../../doc/controllers/supply-chain-service.md#supply-chain-service-list-repositories-for-dependencies)
-* [Supply Chain Service List Lockfiles for Dependencies](../../doc/controllers/supply-chain-service.md#supply-chain-service-list-lockfiles-for-dependencies)
-* [Supply Chain Service Create Sbom Export](../../doc/controllers/supply-chain-service.md#supply-chain-service-create-sbom-export)
-* [Supply Chain Service Get Sbom Export](../../doc/controllers/supply-chain-service.md#supply-chain-service-get-sbom-export)
+* [List Dependencies](../../doc/controllers/supply-chain-service.md#list-dependencies)
+* [List Repositories for Dependencies](../../doc/controllers/supply-chain-service.md#list-repositories-for-dependencies)
+* [List Lockfiles for Dependencies](../../doc/controllers/supply-chain-service.md#list-lockfiles-for-dependencies)
+* [Create Sbom Export](../../doc/controllers/supply-chain-service.md#create-sbom-export)
+* [Get Sbom Export](../../doc/controllers/supply-chain-service.md#get-sbom-export)
 
 
-# Supply Chain Service List Dependencies
+# List Dependencies
 
 ```ts
-async supplyChainServiceListDependencies(
+async listDependencies(
   deploymentId: string,
   body: ListDependenciesRequest,
   requestOptions?: RequestOptions
@@ -60,7 +60,7 @@ const body: ListDependenciesRequest = {
 };
 
 try {
-  const response = await supplyChainServiceApi.supplyChainServiceListDependencies(
+  const response = await supplyChainServiceApi.listDependencies(
     deploymentId,
     body
   );
@@ -87,10 +87,10 @@ try {
 ```
 
 
-# Supply Chain Service List Repositories for Dependencies
+# List Repositories for Dependencies
 
 ```ts
-async supplyChainServiceListRepositoriesForDependencies(
+async listRepositoriesForDependencies(
   deploymentId: string,
   body: ListRepositoriesForDependenciesRequest,
   requestOptions?: RequestOptions
@@ -126,7 +126,7 @@ const body: ListRepositoriesForDependenciesRequest = {
 };
 
 try {
-  const response = await supplyChainServiceApi.supplyChainServiceListRepositoriesForDependencies(
+  const response = await supplyChainServiceApi.listRepositoriesForDependencies(
     deploymentId,
     body
   );
@@ -153,10 +153,10 @@ try {
 ```
 
 
-# Supply Chain Service List Lockfiles for Dependencies
+# List Lockfiles for Dependencies
 
 ```ts
-async supplyChainServiceListLockfilesForDependencies(
+async listLockfilesForDependencies(
   deploymentId: string,
   repositoryId: string,
   body: ListLockfilesForDependenciesRequest,
@@ -197,7 +197,7 @@ const body: ListLockfilesForDependenciesRequest = {
 };
 
 try {
-  const response = await supplyChainServiceApi.supplyChainServiceListLockfilesForDependencies(
+  const response = await supplyChainServiceApi.listLockfilesForDependencies(
     deploymentId,
     repositoryId,
     body
@@ -225,10 +225,10 @@ try {
 ```
 
 
-# Supply Chain Service Create Sbom Export
+# Create Sbom Export
 
 ```ts
-async supplyChainServiceCreateSbomExport(
+async createSbomExport(
   deploymentId: string,
   body: CreateSbomExportRequest,
   requestOptions?: RequestOptions
@@ -267,7 +267,7 @@ const body: CreateSbomExportRequest = {
 };
 
 try {
-  const response = await supplyChainServiceApi.supplyChainServiceCreateSbomExport(
+  const response = await supplyChainServiceApi.createSbomExport(
     deploymentId,
     body
   );
@@ -294,10 +294,10 @@ try {
 ```
 
 
-# Supply Chain Service Get Sbom Export
+# Get Sbom Export
 
 ```ts
-async supplyChainServiceGetSbomExport(
+async getSbomExport(
   deploymentId: string,
   taskToken: string,
   requestOptions?: RequestOptions
@@ -330,7 +330,7 @@ const deploymentId = '123';
 const taskToken = 'taskToken2';
 
 try {
-  const response = await supplyChainServiceApi.supplyChainServiceGetSbomExport(
+  const response = await supplyChainServiceApi.getSbomExport(
     deploymentId,
     taskToken
   );
